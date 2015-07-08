@@ -1,2 +1,2 @@
-# webmodules.github.io
-Módulos Web para uso geral.
+# WebModules
+Biblioteca de módulos web para uso geral.
