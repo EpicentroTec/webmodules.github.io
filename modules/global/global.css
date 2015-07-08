@@ -32,3 +32,44 @@ img {
   height: auto;
   max-width: 100%;
 }
+
+a {
+  color: #f92672;
+  text-decoration: none;
+}
+
+.global.main {
+  margin: 0 auto;
+  max-width: 45em;
+  padding: 2em 1em;
+}
+
+.global.main pre,
+.global.main code {
+  font-size: .9em;
+  white-space: pre-wrap;
+}
+
+.global.main p code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-style: italic;
+  padding: .1em .5em;
+}
+
+.global.main pre code {
+  border-radius: 10px;
+  padding: 1em 2em;
+}
+
+.global.footer {
+  background-color: #23241f;
+  padding: 2em;
+  text-align: center;
+}
+
+.global.footer h1 {
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
+}

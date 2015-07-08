@@ -33,36 +33,15 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: #f92672;
+  text-decoration: none;
+}
+
 .main {
   margin: 0 auto;
   max-width: 45em;
   padding: 2em 1em;
-}
-
-.modules-list li {
-  border-radius: 10px;
-  box-shadow: 0 0 .5em #666, inset 1px 1px 0 rgba(255, 255, 255, 1), inset -1px -1px 0 rgba(0, 0, 0, .5);
-  max-height: 300px;
-  overflow-y: hidden;
-  position: relative;
-}
-
-.modules-list li img {
-  width: 100%;
-}
-
-.modules-list li figcaption {
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 0;
-  color: #fff;
-  font-size: .8em;
-  left: 0;
-  padding: 1em;
-  position: absolute;
-  text-align: center;
-  text-shadow: .05em .05em .1em #000;
-  text-transform: uppercase;
-  width: 100%;
 }
 
 /* Features */
