@@ -58,6 +58,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .global.main {
   margin: 0 auto;
   max-width: 45em;
@@ -97,4 +101,8 @@ a {
 .global.footer h1:before {
   content: 0;
   display: none;
+}
+
+.global.footer h1 a {
+  text-decoration: none;
 }
