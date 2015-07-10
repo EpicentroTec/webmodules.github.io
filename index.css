@@ -22,7 +22,7 @@ h3 {
 h1:before,
 h2:before,
 h3:before {
-  content: '§';
+  content: '\00a7';
   cursor: pointer;
   display: inline-block;
   right: 100%;
