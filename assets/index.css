@@ -19,7 +19,7 @@ h3 {
   position: relative;
 }
 
-h1:before,
+/*h1:before,
 h2:before,
 h3:before {
   content: '\00a7';
@@ -36,7 +36,7 @@ h1:hover:before,
 h2:hover:before,
 h3:hover:before {
   opacity: 1;
-}
+}*/
 
 h1 {
   border-bottom: 1px solid #ccc;
