@@ -1,3 +1,9 @@
+/* framework */
+
+.hide {
+  display: none;
+}
+
 *,
 *:before,
 *:after {
@@ -62,10 +68,17 @@ a:hover {
   text-decoration: underline;
 }
 
-.global.main {
-  margin: 0 auto;
+#header,
+#descricao,
+#uso,
+#comportamento {
+  margin: 30px auto;
   max-width: 45em;
-  padding: 2em 1em;
+  /*padding: 2em 1em;*/
+}
+
+#modulo h1 {
+  display: none;
 }
 
 .global.main pre,
