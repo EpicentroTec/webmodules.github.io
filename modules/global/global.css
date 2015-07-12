@@ -4,6 +4,10 @@
   display: none;
 }
 
+.no-list {
+  list-style: none;
+}
+
 *,
 *:before,
 *:after {
@@ -48,10 +52,20 @@ h1 {
   border-bottom: 1px solid #ccc;
 }
 
+p {
+  line-height: 30px;
+}
+
 ul,
 ol {
   list-style-position: inside;
-  margin: 1.5em 0;
+  margin: .5em 0 1.5em 0;
+}
+
+ul li ul,
+ol li ol {
+  font-size: .9em;
+  margin: 0 0 0 1.5em;
 }
 
 img {
@@ -71,16 +85,18 @@ a:hover {
 #header,
 #descricao,
 #uso,
-#comportamento {
+#comportamento,
+#log {
   margin: 30px auto;
   max-width: 45em;
-  /*padding: 2em 1em;*/
+  padding: 0 1em;
 }
 
 #modulo {
-  box-shadow: inset 5px 5px 0 #c00;
+  box-shadow: 0 5px 0 #c00, 0 -5px 0 #c00;
 }
 
+#header nav h1,
 #modulo h1 {
   display: none;
 }
@@ -94,13 +110,33 @@ a:hover {
 .global.main p code {
   background-color: #eee;
   border-radius: 3px;
+  font-size: .8em;
   font-style: italic;
   padding: .1em .5em;
 }
 
 .global.main pre code {
   border-radius: 10px;
-  padding: 1em 2em;
+  box-shadow: 0 0 5px #000, inset -2px -2px 0 rgba(0,0,0,.3), inset 2px 2px 0 rgba(255,255,255,.1);
+  line-height: 20px;
+  padding: 1em .5em 1em 3.5em;
+  position: relative;
+  transition: box-shadow .25s;
+}
+
+.global.main pre code:hover {
+  box-shadow: 0 0 10px #000, inset -2px -2px 0 rgba(0,0,0,.3), inset 2px 2px 0 rgba(255,255,255,.1);
+  transition: box-shadow .5s;
+}
+
+.global.main pre code:before {
+  background-color: rgba(0, 0, 0, .1);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3em;
 }
 
 .global.footer {
@@ -122,4 +158,17 @@ a:hover {
 
 .global.footer h1 a {
   text-decoration: none;
+}
+
+/* Code Highligh */
+
+.line-number {
+  left: 0;
+  position: absolute;
+  padding: 0 1em;
+}
+
+.line-number span {
+  color: #ccc;
+  display: block;
 }

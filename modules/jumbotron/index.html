@@ -10,17 +10,21 @@
   <header id="header">
     <h1>Jumbotron v0.1</h1>
     <nav>
-      <li><a href="#modulo">Módulo</a></li>
-      <li><a href="#descricao">Descrição</a></li>
-      <li><a href="#uso">Uso</a></li>
-      <li><a href="#comportamento">Comportamento</a></li>
+      <h1>Índice</h1>
+      <ul>
+        <li><a href="#modulo">Módulo</a></li>
+        <li><a href="#descricao">Descrição</a></li>
+        <li><a href="#uso">Uso</a></li>
+        <li><a href="#comportamento">Comportamento</a></li>
+        <li><a href="#log">Log das versões</a></li>
+      </ul>
     </nav>
   </header>
   <main class="global main">
     <section id="modulo">
       <h1>Módulo</h1>
       <div class="wm-jumbotron">
-        <img src="img/01.jpg" alt="Imagem do Jumbotron">
+        <img src="assets/img/01.jpg" alt="Imagem do Jumbotron">
       </div>
     </section>
     <section id="descricao">
@@ -73,9 +77,40 @@
         </code>
       </pre>
     </section>
+    <section id="log">
+      <h1>Log das versões</h1>
+      <ul class="no-list">
+        <li>
+          <h2>0.1</h2>
+          <ul class="no-list">
+            <li>Criação do módulo.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </main>
   <footer class="global footer">
     <h1><a href="http://localhost/projects/webmodules.github.io/">WebModules</a></h1>
   </footer>
 </body>
+<script type="text/javascript">
+(function() {
+
+  var code = document.getElementsByTagName('code');
+
+  // for (var i = 0; i < code.length; i++) {
+  //   code[i] = document.getElementsByTagName('pre')[i].getElementsByTagName('code');
+  // }
+
+  var pl = code.length;
+  for (var i = 0; i < pl; i++) {
+      code[i].innerHTML = '<span class="line-number"></span>' + code[i].innerHTML + '<span class="cl"></span>';
+      var num = code[i].innerHTML.split(/\n/).length;
+      for (var j = 0; j < num; j++) {
+          var line_num = code[i].getElementsByTagName('span')[0];
+          line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+      }
+  }
+})();
+</script>
 </html>

@@ -12,10 +12,101 @@
   <body>
     <main class="global main">
       <h1 id="escrever">WebModules - Escrever um Módulo</h1>
-      
+      <nav>
+        <h1 class="hide">Índice</h1>
+        <ol>
+          <li><a href="#estrutura">Criar estrutura de arquivos</a></li>
+          <li><a href="#markup">Marcação HTML</a></li>
+        </ol>
+      </nav>
+      <section id="estrutura">
+        <h1>Criar estrutura de arquivos</h1>
+        <p>Dentro da pasta modules do projeto e crie uma pasta com o nome do módulo escrito sem caracteres especiais e usando a convenção <a href="https://pt.wikipedia.org/wiki/CamelCase">lowerCamelCase</a>.<br>
+        Dentro da pasta crie os arquivos <code>index.html</code>, <code>style.css</code> e <code>script.js</code>, onde:</p>
+        <dl>
+          <dt>index.html</dt>
+          <dd>Marcação HTML contendo uma demonstração do módulo e sua documentação</dd>
+          <dt>style.css</dt>
+          <dd>Estilos CSS do módulo</dd>
+          <dt>script.js</dt>
+          <dd>Script JavaScript utilizado pelo módulo. Mesmo que o módulo não utilize JavaScript, é necessário a criação desse arquivo vazio.</dd>
+        </dl>
+        <img src="../assets/img/estrutura-de-arquivos.png" alt="Estrutura de arquivos">
+        <p>Se o módulo utilize recursos externos como imagens, SVG's, fontes, etc, crie uma pasta chamada <code>assets</code> dentro da pasta do módulo para guardar esses arquivos.</p>
+      </section>
+      <section id="markup">
+        <h1>Marcação HTML</h1>
+        <p>O arquivo <code>index.html</code> do módulo deve ter o seguinte template:</p>
+        <pre>
+          <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Nome do M&#243;dulo&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;link rel=&quot;import&quot; href=&quot;../global/imports.html&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header id=&quot;header&quot;&gt;
+    &lt;h1&gt;Nome do M&#243;dulo v0.1&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;h1&gt;&#205;ndice&lt;/h1&gt;
+      &lt;li&gt;&lt;a href=&quot;#modulo&quot;&gt;M&#243;dulo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#descricao&quot;&gt;Descri&#231;&#227;o&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#uso&quot;&gt;Uso&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#comportamento&quot;&gt;Comportamento&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#log&quot;&gt;Log das vers&#245;es&lt;/a&gt;&lt;/li&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main class=&quot;global main&quot;&gt;
+    &lt;section id=&quot;modulo&quot;&gt;
+      &lt;h1&gt;M&#243;dulo&lt;/h1&gt;
+      &lt;!-- Marca&#231;&#227;o HTML do m&#243;dulo --&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;descricao&quot;&gt;
+      &lt;h1&gt;Descri&#231;&#227;o&lt;/h1&gt;
+      &lt;p&gt;Descri&#231;&#227;o do m&#243;dulo.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;uso&quot;&gt;
+      &lt;h1&gt;Uso&lt;/h1&gt;
+      &lt;p&gt;Instru&#231;&#245;es para o uso do m&#243;dulo, com exemplo de uso do c&#243;digo:&lt;/p&gt;
+      &lt;pre&gt;
+        &lt;code class=&quot;html&quot;&gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;caminho/para/WebModules.css&amp;quot;&amp;gt;
+  &amp;lt;/head&amp;gt;
+        &lt;/code&gt;
+      &lt;/pre&gt;
+      ...
+    &lt;/section&gt;
+    &lt;section id=&quot;comportamento&quot;&gt;
+      &lt;h1&gt;Comportamento&lt;/h1&gt;
+      &lt;p&gt;Descri&#231;&#227;o do comportamento do m&#243;dulo, ou seja, como ele reage a intera&#231;&#227;o com o usu&#225;rio, o contexto em que ele est&#225; inserido e como ele pode ser configurado, se necess&#225;rio utilizando exemplos em c&#243;digo.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;log&quot;&gt;
+      &lt;h1&gt;Log das vers&#245;es&lt;/h1&gt;
+      &lt;ul class=&quot;no-list&quot;&gt;
+        &lt;li&gt;
+          &lt;h2&gt;0.1&lt;/h2&gt;
+          &lt;ul class=&quot;no-list&quot;&gt;
+            &lt;li&gt;Criado o m&#243;dulo.&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer class=&quot;global footer&quot;&gt;
+    &lt;h1&gt;&lt;a href=&quot;http://epicentrotec.github.io/webmodules.github.io/&quot;&gt;WebModules&lt;/a&gt;&lt;/h1&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code>
+        </pre>
+      </section>
     </main>
     <footer class="global footer">
-      <h1><a href="http://localhost/projects/webmodules.github.io/">WebModules</a></h1>
+      <h1><a href="../">WebModules</a></h1>
     </footer>
   </body>
 </html>
