@@ -104,7 +104,6 @@ a:hover {
 .global.main pre,
 .global.main code {
   font-size: .9em;
-  white-space: pre-wrap;
 }
 
 .global.main p code {
