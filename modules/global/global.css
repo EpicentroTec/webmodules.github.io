@@ -24,6 +24,7 @@ h1,
 h2,
 h3 {
   color: #111;
+  font-family: 'FreeSansBold', sans-serif;
   margin: 1em 0 .35em 0;
   padding-bottom: .35em;
   position: relative;
@@ -53,7 +54,9 @@ h1 {
 }
 
 p {
-  line-height: 30px;
+  line-height: 25px;
+  margin: 1em 0;
+  text-align: justify;
 }
 
 ul,
@@ -66,6 +69,20 @@ ul li ul,
 ol li ol {
   font-size: .9em;
   margin: 0 0 0 1.5em;
+}
+
+dl dt {
+  font-family: 'FreeSansBold', sans-serif;
+}
+
+figure {
+  margin: 2em 0;
+}
+
+figcaption {
+  color: #666;
+  font-size: .8em;
+  text-align: center;
 }
 
 img {
@@ -111,7 +128,7 @@ a:hover {
   border-radius: 3px;
   font-size: .8em;
   font-style: italic;
-  padding: .1em .5em;
+  padding: .1em .4em;
 }
 
 .global.main pre code {
@@ -168,6 +185,6 @@ a:hover {
 }
 
 .line-number span {
-  color: #ccc;
+  color: rgba(255, 255, 255, .8);
   display: block;
 }

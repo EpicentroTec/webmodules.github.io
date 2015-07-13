@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../modules/global/highlight/styles/monokai_sublime.css">
     <script src="../modules/global/highlight/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../assets/script.js"></script>
   </head>
   <body>
     <main class="global main">
@@ -15,12 +16,14 @@
       <nav>
         <h1 class="hide">Índice</h1>
         <ol>
-          <li><a href="#estrutura">Criar estrutura de arquivos</a></li>
+          <li><a href="#estrutura">Estrutura de arquivos</a></li>
           <li><a href="#markup">Marcação HTML</a></li>
+          <li><a href="#style">Estilo CSS</a></li>
+          <li><a href="#scripts">JavaScript</a></li>
         </ol>
       </nav>
       <section id="estrutura">
-        <h1>Criar estrutura de arquivos</h1>
+        <h1>Estrutura de arquivos</h1>
         <p>Dentro da pasta modules do projeto e crie uma pasta com o nome do módulo escrito sem caracteres especiais e usando a convenção <a href="https://pt.wikipedia.org/wiki/CamelCase">lowerCamelCase</a>.<br>
         Dentro da pasta crie os arquivos <code>index.html</code>, <code>style.css</code> e <code>script.js</code>, onde:</p>
         <dl>
@@ -31,14 +34,17 @@
           <dt>script.js</dt>
           <dd>Script JavaScript utilizado pelo módulo. Mesmo que o módulo não utilize JavaScript, é necessário a criação desse arquivo vazio.</dd>
         </dl>
-        <img src="../assets/img/estrutura-de-arquivos.png" alt="Estrutura de arquivos">
+        <figure>
+          <img src="../assets/img/estrutura-de-arquivos.png" alt="Estrutura de arquivos">
+          <figcaption>Arvore de pastas na criação de um novo módulo.</figcaption>
+        </figure>
         <p>Se o módulo utilize recursos externos como imagens, SVG's, fontes, etc, crie uma pasta chamada <code>assets</code> dentro da pasta do módulo para guardar esses arquivos.</p>
       </section>
       <section id="markup">
         <h1>Marcação HTML</h1>
         <p>O arquivo <code>index.html</code> do módulo deve ter o seguinte template:</p>
         <pre>
-          <code>
+          <code class="code html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;pt-BR&quot;&gt;
 &lt;head&gt;
@@ -72,7 +78,7 @@
       &lt;h1&gt;Uso&lt;/h1&gt;
       &lt;p&gt;Instru&#231;&#245;es para o uso do m&#243;dulo, com exemplo de uso do c&#243;digo:&lt;/p&gt;
       &lt;pre&gt;
-        &lt;code class=&quot;html&quot;&gt;
+        &lt;code class=&quot;code html&quot;&gt;
   &amp;lt;head&amp;gt;
     &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;caminho/para/WebModules.css&amp;quot;&amp;gt;
   &amp;lt;/head&amp;gt;
@@ -85,7 +91,7 @@
       &lt;p&gt;Descri&#231;&#227;o do comportamento do m&#243;dulo, ou seja, como ele reage a intera&#231;&#227;o com o usu&#225;rio, o contexto em que ele est&#225; inserido e como ele pode ser configurado, se necess&#225;rio utilizando exemplos em c&#243;digo.&lt;/p&gt;
     &lt;/section&gt;
     &lt;section id=&quot;log&quot;&gt;
-      &lt;h1&gt;Log das vers&#245;es&lt;/h1&gt;
+      &lt;h1&gt;Log de vers&#245;es&lt;/h1&gt;
       &lt;ul class=&quot;no-list&quot;&gt;
         &lt;li&gt;
           &lt;h2&gt;0.1&lt;/h2&gt;
@@ -101,6 +107,41 @@
   &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
+          </code>
+        </pre>
+        <p>A marcação HTML do módulo deve estar dentro da <code>&lt;section id=&quot;modulo&quot;&gt;</code>, como indicado na linha 25. Caso seja necessário utilizar um exemplo de código, coloque ele dentro de uma tag <code>&lt;code&gt;</code> com um valor de classe <code>code</code> mais outro que indique a linguagem do código, os valores suportados são <code>html</code>, <code>css</code>, <code>javascript</code>, <code>scss</code>, <code>http</code>, <code>makefile</code>, <code>markdown</code>, <code>sql</code>, <code>xml</code>, <code>json</code>, <code>bash</code> e <code>php</code>. A tag code por sua vez deve estar dentro de uma tag <code>&lt;pre&gt;</code> como indicado no código entre as linhas 34 e 40. Caso o código seja HTML, CSS, PHP ou JavaScript e seus derivados, você deve escapar seus caracteres especiais antes de inseri-los na tag <code>&lt;code&gt;</code>, para fazer isso recomendamos o site <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">opinionatedgeek.com</a>.</p>
+        <p>O conteúdo das <code>&lt;section&gt;</code> deve ser preenchido de acordo com o módulo.</p>
+        <p>O Log de versões mostra as mudanças da nova versão em relação a versão anterior. A primeira versão deve conter apenas a criação do módulo.</p>
+      </section>
+      <section id="style">
+        <h1>Estilo CSS</h1>
+        <p>O estilo CSS referente ao módulo deve ser escrito no arquivo <code>style.css</code>.<br>
+        Os estilos devem começar com a classe do módulo, que deve ser composta pela combinação <code>wm-(nomeDoModulo)</code>. Exemplo do módulo <a href="../modules/jumbotron">Jumbotron</a>:</p>
+        <pre>
+          <code class="code css">
+.wm-jumbotron {
+  background-color: rgba(0, 0, 0, .1);
+  max-height: 100vh;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.wm-jumbotron img {
+  display: block;
+  width: 100%;
+}
+          </code>
+        </pre>
+        <p>Além de seu estilo exclusivo, os módulos herdam alguns estilos globais, contidos no arquivo <code><a href="../modules/global/global.css">global.css</a></code>. Verifique ele antes de criar os estilos do módulo.</p>
+      </section>
+      <section id="scripts">
+        <h1>JavaScript</h1>
+        <p>Caso seu módulo utilize scripts JavaScript, escreva-os no arquivo <code>script.js</code> com o seguinte template:</p>
+        <pre>
+          <code class="code javascript">
+window.onload = function() {
+  // Código JavaScript
+}
           </code>
         </pre>
       </section>
