@@ -7,63 +7,90 @@
   <link rel="import" href="../global/imports.html">
 </head>
 <body>
-  <header class="wm-jumbotron">
-    <img src="img/01.jpg" alt="Imagem do Jumbotron">
+  <header id="header">
+    <h1>Jumbotron v1.0</h1>
+    <nav>
+      <h1>Índice</h1>
+      <ul>
+        <li><a href="#modulo">Módulo</a></li>
+        <li><a href="#descricao">Descrição</a></li>
+        <li><a href="#uso">Uso</a></li>
+        <li><a href="#comportamento">Comportamento</a></li>
+        <li><a href="#log">Log das versões</a></li>
+      </ul>
+    </nav>
   </header>
   <main class="global main">
-    <h1>Jumbotron v0.1</h1>
-    <ul>
-      <li><a href="#descricao">Descrição</a></li>
-      <li><a href="#estrutura">Uso</a></li>
-      <li><a href="#comportamento">Comportamento</a></li>
-    </ul>
-    <h2 id="descricao">Descrição</h2>
-    <p>O módulo Jumbotron é um cabeçalho com imagens grandes</p>
-    <h2 id="estrutura">Uso</h2>
-    <p>Adicione um link para o arquivo <code>WebModules.css</code> dentro do node <code>&lt;head&gt;</code> da sua página:</p>
-    <pre>
-      <code class="html">
-&lt;head&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;caminho/para/WebModules.css&quot;&gt;
-&lt;/head&gt;
-      </code>
-    </pre>
-    <p>Depois é só atribuir a classe <code>.wm-jumbotron</code> a um elemento de bloco com uma imagem dentro:</p>
-    <pre>
-      <code class="html">
-&lt;header class=&quot;wm-jumbotron&quot;&gt;
-  &lt;img src=&quot;http://www.fnordware.com/superpng/pnggrad16rgba.png&quot; alt=&quot;Imagem do Jumbotron&quot;&gt;
-&lt;/header&gt;
-      </code>
-    </pre>
-    <h2 id="comportamento">Comportamento</h2>
-    <p>O módulo Jumbotron ocupa nativamente 100% da altura e da largura da tela, adaptando sua altura de acordo com a altura da imagem proporcional a largura da tela.</p>
-    <p>Para alterar a altura do módulo, é necessário mudar o valor da propriedade <code>max-height</code> da classe <code>.wm-jumbotron</code> para o valor desejado. <br>
-    Exemplo:</p>
-    <pre>
-      <code class="css">
-/* Antes: */
+    <section id="modulo">
+      <h1>Módulo</h1>
+      <div class="wm-jumbotron">
+        <img src="assets/img/01.jpg" alt="Imagem do Jumbotron">
+      </div>
+    </section>
+    <section id="descricao">
+      <h1>Descrição</h1>
+      <p>O módulo Jumbotron é um elemento de bloco com uma imagem dentro, que ocupa no máximo 100% da altura e largura da tela, se adaptando a diferentes resoluções de tela respeitando as proporções da imagem.</p>
+    </section>
+    <section id="uso">
+      <h1>Uso</h1>
+      <p>Adicione um link para o arquivo <code>WebModules.css</code> dentro do node <code>&lt;head&gt;</code> da sua página:</p>
+      <pre>
+        <code class="code html">
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;caminho/para/WebModules.css&quot;&gt;
+  &lt;/head&gt;
+        </code>
+      </pre>
+      <p>Depois é só atribuir a classe <code>.wm-jumbotron</code> a um elemento de bloco com uma imagem dentro:</p>
+      <pre>
+        <code class="code html">
+  &lt;div class=&quot;wm-jumbotron&quot;&gt;
+    &lt;img src=&quot;http://www.fnordware.com/superpng/pnggrad16rgba.png&quot;&gt;
+  &lt;/div&gt;
+        </code>
+      </pre>
+    </section>
+    <section id="comportamento">
+      <h1>Comportamento</h1>
+      <p>O módulo Jumbotron ocupa nativamente 100% da altura e da largura da tela, adaptando sua altura de acordo com a altura da imagem proporcional a largura da tela.</p>
+      <p>Para alterar a altura do módulo, é necessário mudar o valor da propriedade <code>max-height</code> da classe <code>.wm-jumbotron</code> para o valor desejado. <br>
+      Exemplo:</p>
+      <pre>
+        <code class="code css">
+  /* Antes: */
 
-.wm-jumbotron {
-  background-color: rgba(0, 0, 0, .1);
-  max-height: 100vh; /* Nativamente o módulo ocupa 100% da altura da tela utilizando a medida 'vh' (viewport height) */
-  overflow-y: hidden;
-  width: 100%;
-}
+  .wm-jumbotron {
+    background-color: rgba(0, 0, 0, .1);
+    max-height: 100vh; /* 100% da altura da tela */
+    overflow-y: hidden;
+    width: 100%;
+  }
 
-/* Depois: */
+  /* Depois: */
 
-.wm-jumbotron {
-  background-color: rgba(0, 0, 0, .1);
-  max-height: 70vh; /* Agora ele ocupa 70% da tela */
-  overflow-y: hidden;
-  width: 100%;
-}
-      </code>
-    </pre>
+  .wm-jumbotron {
+    background-color: rgba(0, 0, 0, .1);
+    max-height: 70vh; /* Agora ele tem uma altura de 70% */
+    overflow-y: hidden;
+    width: 100%;
+  }
+        </code>
+      </pre>
+    </section>
+    <section id="log">
+      <h1>Log das versões</h1>
+      <ul class="no-list">
+        <li>
+          <h2>1.0 - 13/07/2015</h2>
+          <ul>
+            <li>Lançamento do módulo.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </main>
   <footer class="global footer">
-    <h1><a href="http://localhost/projects/webmodules.github.io/">WebModules</a></h1>
+    <h1><a href="../..">WebModules</a></h1>
   </footer>
 </body>
 </html>

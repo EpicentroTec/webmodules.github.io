@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Caixa de Código</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="import" href="../global/imports.html">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header id="header">
+    <h1>Caixa de Código v1.0</h1>
+    <nav>
+      <h1>Índice</h1>
+      <li><a href="#modulo">Módulo</a></li>
+      <li><a href="#descricao">Descrição</a></li>
+      <li><a href="#uso">Uso</a></li>
+      <li><a href="#comportamento">Comportamento</a></li>
+      <li><a href="#log">Log das versões</a></li>
+    </nav>
+  </header>
+  <main class="global main">
+    <section id="modulo">
+      <h1>Módulo</h1>
+      <pre class="wm-caixaDeCodigo"><code class="code html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Nome do M&#243;dulo&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;link rel=&quot;import&quot; href=&quot;../global/imports.html&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header id=&quot;header&quot;&gt;
+    &lt;h1&gt;Nome do M&#243;dulo v0.1&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;h1&gt;&#205;ndice&lt;/h1&gt;
+      &lt;li&gt;&lt;a href=&quot;#modulo&quot;&gt;M&#243;dulo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#descricao&quot;&gt;Descri&#231;&#227;o&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#uso&quot;&gt;Uso&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#comportamento&quot;&gt;Comportamento&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#log&quot;&gt;Log das vers&#245;es&lt;/a&gt;&lt;/li&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main class=&quot;global main&quot;&gt;
+    &lt;section id=&quot;modulo&quot;&gt;
+      &lt;h1&gt;M&#243;dulo&lt;/h1&gt;
+      &lt;!-- Marca&#231;&#227;o HTML do m&#243;dulo --&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;descricao&quot;&gt;
+      &lt;h1&gt;Descri&#231;&#227;o&lt;/h1&gt;
+      &lt;p&gt;Descri&#231;&#227;o do m&#243;dulo.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;uso&quot;&gt;
+      &lt;h1&gt;Uso&lt;/h1&gt;
+      &lt;p&gt;Instru&#231;&#245;es para o uso do m&#243;dulo, com exemplo de uso do c&#243;digo:&lt;/p&gt;
+      &lt;pre&gt;
+        &lt;code class=&quot;code html&quot;&gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;caminho/para/WebModules.css&amp;quot;&amp;gt;
+  &amp;lt;/head&amp;gt;
+        &lt;/code&gt;
+      &lt;/pre&gt;
+      ...
+        </code></pre>
+    </section>
+    <section id="descricao">
+      <h1>Descrição</h1>
+      <p>Uma elemento de bloco para a visualização de amostras de código, com marcação do número de linhas e realce de cor para o código inspirado no esquema de cores <a href="https://github.com/jonschlinkert/sublime-monokai-extended">Sublime Monokai</a>. O realce de cor supora as linguagens <code>html</code>, <code>css</code>, <code>javascript</code>, <code>scss</code>, <code>http</code>, <code>makefile</code>, <code>markdown</code>, <code>sql</code>, <code>xml</code>, <code>json</code>, <code>bash</code> e <code>php</code>.</p>
+    </section>
+    <section id="uso">
+      <h1>Uso</h1>
+      <p>Crie um elemento <code>&lt;pre&gt;</code> com <code>wm-caixaDeCodigo</code> como valor de <code>class</code>. Dentro desse elemento crie um elemento <code>&lt;code&gt;</code> com <code>code [linguagem]</code> como valor de <code>class</code>, onde [linguagem] é o nome da linguagem do código, em letras minúsculas, como no exemplo:</p>
+      <pre class="wm-caixaDeCodigo">
+        <code class="code html">
+&lt;pre class=&quot;wm-caixaDeCodigo&quot;&gt;
+  &lt;code class=&quot;code html&quot;&gt;
+    &amp;lt;head&amp;gt;
+      &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;caminho/para/WebModules.css&amp;quot;&amp;gt;
+    &amp;lt;/head&amp;gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+        </code>
+      </pre>
+        Se a caixa de código está inserida num documento HTML e seu código utiliza caracteres especiais utilizados pela linguagem HTML como <code>&lt;</code> ou <code>&quot;</code>, será necessário escapar os caracteres especiais desse código, como no exemplo acima. Recomendamos a ferramenta de enconde do site <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">opinionatedgeek.com</a>.
+        <img src="../../assets/img/html-encode.png" alt="">
+    </section>
+    <section id="comportamento">
+      <h1>Comportamento</h1>
+      <p>O módulo Caixa de Código ocupa 100% da largura do elemento onde está inserido. Caso o código ultrapasse a largura do elemento, uma barra de rolagem horizontal aparece na base do elemento, permitindo a navegação do código sem alterar a largura do elemento. A altura do elemento de adapta ao código.</p>
+    </section>
+    <section id="log">
+      <h1>Log de versões</h1>
+      <ul class="no-list">
+        <li>
+          <h2>1.0 - 16/07/2015</h2>
+          <ul>
+            <li>Criado o módulo.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="global footer">
+    <h1><a href="http://epicentrotec.github.io/webmodules.github.io/">WebModules</a></h1>
+  </footer>
+</body>
+</html>
