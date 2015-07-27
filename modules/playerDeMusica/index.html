@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Player de Música</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="import" href="../global/imports.html">
+  <script src="script.js"></script>
+  <style>
+
+    .centralize {
+      margin: 0 auto;
+      max-width: 45em;
+      padding: 3em 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1>Player de Música v1.0</h1>
+    <nav>
+      <h1>Índice</h1>
+      <ul>
+        <li><a href="#modulo">Módulo</a></li>
+        <li><a href="#descricao">Descrição</a></li>
+        <li><a href="#uso">Uso</a></li>
+        <li><a href="#comportamento">Comportamento</a></li>
+        <li><a href="#log">Log das versões</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="global main">
+    <section id="modulo">
+      <h1>Módulo</h1>
+      <div class="player centralize" data-autoplay="false" data-loop="false">
+        <div class="controls">
+          <button class="control-stop">Stop</button>
+          <button class="control-play">Play</button>
+          <button class="control-prev">Prev</button>
+          <button class="control-next">Next</button>
+          <button class="control-volume"><input type="range" min="0" max="10" value="5"></button>
+        </div>
+        <div class="playlist">
+          <table>
+            <tbody>
+              <tr>
+                <td><button class="track-pause">Pause</button></td>
+                <td><button class="track-play">Play</button></td>
+                <td>Title Screen</td>
+                <td><audio src="assets/test-tracks/01-title-screen.mp3" class='track' preload='none' controls></audio></td>
+              </tr>
+              <tr>
+                <td><button class="track-pause">Pause</button></td>
+                <td><button class="track-play">Play</button></td>
+                <td>Green Hill Zone</td>
+                <td><audio src="assets/test-tracks/02-green-hill-zone.mp3" class='track' preload='none' controls></audio></td>
+              </tr>
+              <tr>
+                <td><button class="track-pause">Pause</button></td>
+                <td><button class="track-play">Play</button></td>
+                <td>Marble Zone</td>
+                <td><audio src="assets/test-tracks/03-marble-zone.mp3" class='track' preload='none' controls></audio></td>
+              </tr>
+              <tr>
+                <td><button class="track-pause">Pause</button></td>
+                <td><button class="track-play">Play</button></td>
+                <td>Spring Yard Zone</td>
+                <td><audio src="assets/test-tracks/04-spring-yard-zone.mp3" class='track' preload='none' controls></audio></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section id="descricao">
+      <h1>Descrição</h1>
+      <p>O módulo Player de Música é um elemento de bloco com uma ou mais tags <code>&lt;audio&gt;</code>, formando uma playlist a partir da primeira tag <code>&lt;audio&gt;</code> seguinda pelas seguintes, cada uma com um botão para tocar e pausar cada faixa individualmente, além de um elemento de bloco com botões com as funcionalidades tocar, para, avançar para próxima faixa, retroceder para a faixa anterior e controle de volume para todas as faixas.</p>
+    </section>
+    <section id="uso">
+      <h1>Uso</h1>
+      <p>Adicione um link para o arquivo <code>WebModules.min.css</code> e para o script <code>WebModules.min.js</code> dentro da tag <code>&lt;head&gt;</code> da sua página:</p>
+      <pre>
+        <code class="code html">
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;caminho/para/WebModules.min.css&quot;&gt;
+    &lt;script src=&quot;caminho/para/WebModules.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+        </code>
+      </pre>
+      <p>Depois é só atribuir a classe <code>.wm-mPlayer</code> a um elemento de bloco com seguinte estrutura:</p>
+      <pre>
+        <code class="code html">
+  &lt;div class=&quot;wm-mPlayer&quot; data-autoplay=&quot;false&quot; data-loop=&quot;false&quot;&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+      &lt;button class=&quot;control-stop&quot;&gt;Stop&lt;/button&gt;
+      &lt;button class=&quot;control-play&quot;&gt;Play&lt;/button&gt;
+      &lt;button class=&quot;control-prev&quot;&gt;Prev&lt;/button&gt;
+      &lt;button class=&quot;control-next&quot;&gt;Next&lt;/button&gt;
+      &lt;button class=&quot;control-volume&quot;&gt;&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;playlist&quot;&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;button class=&quot;track-pause&quot;&gt;Pause&lt;/button&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;button class=&quot;track-play&quot;&gt;Play&lt;/button&gt;&lt;/td&gt;
+            &lt;td&gt;Title Screen&lt;/td&gt;
+            &lt;td&gt;&lt;audio src=&quot;01-title-screen.mp3&quot; class=&#39;track&#39; preload=&#39;none&#39; controls&gt;&lt;/audio&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          ...
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+        </code>
+      </pre>
+    </section>
+    <section id="comportamento">
+      <h1>Comportamento</h1>
+      <p>O módulo Player de Música se comporta como um elemento de bloco que contem outro elemento de bloco e uma tabela. O módulo aceita dois parâmetros: <code>data-autoplay</code> e <code>data-loop</code>, ambos aceitam apenas dois valores, <code>true</code> e <code>false</code>, sendo <code>false</code> o valor padrão. O parâmetro <code>data-autoplay</code> quando recebe o valor <code>true</code> faz com que o player inicie automaticamente após o carregamento da página, enquanto que o parâmetro <code>data-loop</code> quando recebe o valor <code>true</code> faz a playlist reiniciar depois de a última faixa ser tocada.</p>
+      <p>Dentro do módulo deve existir um elemento de bloco com a classe <code>controls</code>, que por sua vez contem 5 elementos <code>&lt;button&gt;</code> com as classes indicadas no seguinte exemplo:</p>
+      <pre>
+        <code class="code html">
+&lt;div class=&quot;controls&quot;&gt;
+  &lt;button class=&quot;control-stop&quot;&gt;Stop&lt;/button&gt;
+  &lt;button class=&quot;control-play&quot;&gt;Play&lt;/button&gt;
+  &lt;button class=&quot;control-prev&quot;&gt;Prev&lt;/button&gt;
+  &lt;button class=&quot;control-next&quot;&gt;Next&lt;/button&gt;
+  &lt;button class=&quot;control-volume&quot;&gt;&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+      <p>O elemento com a classe <code>control-stop</code> quando clicado interrompe a faixa que está tocando e retorna as faixas ativas para o começo.</p>
+      <p>O elemento com a classe <code>control-play</code> quando clicado toca a primeira faixa da playlist e retorna as faixas ativas para o começo.</p>
+      <p>O elemento com a classe <code>control-prev</code> quando clicado toca a faixa imediatamente anterior em relação a faixa ativa.</p>
+      <p>O elemento com a classe <code>control-next</code> quando clicado toca a faixa imediatamente posterior em relação a faixa ativa.</p>
+      <p>O elemento com a classe <code>control-volume</code> deve ter um elemento <code>&lt;input&gt;</code> com o parametro <code>type=&quot;range&quot;</code>, que controla o volume das faixas ativas.</p>
+    </section>
+    <section id="log">
+      <h1>Log das versões</h1>
+      <ul class="no-list">
+        <li>
+          <h2>1.0 - 27/07/2015</h2>
+          <ul class="no-list">
+            <li>Lançamento do módulo.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="global footer">
+    <h1><a href="../..">WebModules</a></h1>
+  </footer>
+</body>
+</html>
