@@ -14,7 +14,7 @@
     <main class="global main">
       <h1 id="escrever">WebModules - Escrever um Módulo</h1>
       <nav>
-        <h1 class="hide">Índice</h1>
+        <h2 class="hide">Índice</h2>
         <ol>
           <li><a href="#install">Instalação</a></li>
           <li><a href="#estrutura">Estrutura de arquivos</a></li>
@@ -24,32 +24,32 @@
         </ol>
       </nav>
       <section id="install">
-        <h1 id="instalacao">Instalação</h1>
-        <p>Para escrever um Módulo, faça um fork do repositório <a href="https://github.com/EpicentroTec/webmodules.github.io">webmodules.github.io</a> em sua conta no GitHub e faça um clone de seu fork em sua máquina local:</p>
+        <h2 id="instalacao">Instalação</h2>
+        <p>Para escrever um módulo, faça um <em>fork </em>do repositório <a href="https://github.com/EpicentroTec/webmodules.github.io" target="_blank">webmodules.github.io</a> em sua conta no GitHub e faça um clone de seu <em>fork </em>em sua máquina local:</p>
         <pre>
           <code class="bash">
-  $ git clone git@github.com:meufork/webmodules.github.io.git
+            $ git clone git@github.com:meufork/webmodules.github.io.git
           </code>
         </pre>
         <p>A pasta baixada do repositório tem a seguinte estrutura:</p>
         <pre>
           <code class="html">
-  /webmodules.github.io
-    ├ index.html
-    ├ index.css
-    ├ README.md
-    ├ wm-doc.html
-    ├ /.git
-    ├ /modules
-      ├ /global
-        ├ /highlight
-        ├ global.css
-        ├ imports.html
-      ├ /moduloTeste
-        ├ /assets
-        ├ index.html
-        ├ style.css
-        ├ script.js
+/webmodules.github.io
+  ├ index.html
+  ├ index.css
+  ├ README.md
+  ├ wm-doc.html
+  ├ /.git
+  ├ /modules
+    ├ /global
+      ├ /highlight
+      ├ global.css
+      ├ imports.html
+    ├ /moduloTeste
+      ├ /assets
+      ├ index.html
+      ├ style.css
+      ├ script.js
           </code>
         </pre>
         <p>Onde:</p>
@@ -63,19 +63,19 @@
           <dt>wm-doc.html</dt>
           <dd>Página HTML contendo a documentação do WebModules</dd>
           <dt>/.git</dt>
-          <dd>Pagina com arquivos de configuração do Git, não toque nela!</dd>
+          <dd>Página com arquivos de configuração do Git, não toque nela!</dd>
           <dt>/modules</dt>
           <dd>Pasta contendo os módulos</dd>
           <dt>/modules/global</dt>
           <dd>Pasta para recursos usados por todos os módulos</dd>
           <dt>/modules/global/highlight</dt>
-          <dd>Plugin para apresentação visual de pedaços de código, mais detalhes em https://highlightjs.org/</dd>
+          <dd><em>Plugin </em>para apresentação visual de pedaços de código, mais detalhes em https://highlightjs.org/</dd>
           <dt>/modules/global/imports.html</dt>
           <dd>HTML que importa os recursos usados para a apresentação de todos os módulos</dd>
           <dt>/modules/moduloTeste</dt>
           <dd>Pasta de um módulo de teste, nomeada em letra minúscula, sem caracteres especiais e usando a convenção CamelCase</dd>
           <dt>/modules/moduloTeste/assets</dt>
-          <dd>Pasta contendo recursos usados pelo módulo que não seja arquivos CSS ou javaScript, como imagens, SVG's, etc.</dd>
+          <dd>Pasta contendo recursos usados pelo módulo que não sejam arquivos CSS ou JavaScript, como imagens, SVGs etc.</dd>
           <dt>/modules/moduloTeste/index.html</dt>
           <dd>Arquivo para apresentação do módulo e sua documentação</dd>
           <dt>/modules/moduloTeste/style.css</dt>
@@ -85,8 +85,8 @@
         </dl>
       </section>
       <section id="estrutura">
-        <h1>Estrutura de arquivos</h1>
-        <p>Dentro da pasta modules do projeto e crie uma pasta com o nome do módulo escrito sem caracteres especiais e usando a convenção <a href="https://pt.wikipedia.org/wiki/CamelCase">lowerCamelCase</a>.<br>
+        <h2>Estrutura de arquivos</h2>
+        <p>Dentro da pasta <code>modules </code>do projeto, crie uma pasta com o nome do módulo escrito sem caracteres especiais e usando a convenção <a href="https://pt.wikipedia.org/wiki/CamelCase" target="_blank">lowerCamelCase</a>.<br>
         Dentro da pasta crie os arquivos <code>index.html</code>, <code>style.css</code> e <code>script.js</code>, onde:</p>
         <dl>
           <dt>index.html</dt>
@@ -94,16 +94,16 @@
           <dt>style.css</dt>
           <dd>Estilos CSS do módulo</dd>
           <dt>script.js</dt>
-          <dd>Script JavaScript utilizado pelo módulo. Mesmo que o módulo não utilize JavaScript, é necessário a criação desse arquivo vazio.</dd>
+          <dd>Script JavaScript utilizado pelo módulo. Mesmo que o módulo não utilize JavaScript, é necessária a criação desse arquivo vazio.</dd>
         </dl>
         <figure>
           <img src="../assets/img/estrutura-de-arquivos.png" alt="Estrutura de arquivos">
-          <figcaption>Arvore de pastas na criação de um novo módulo.</figcaption>
+          <figcaption>Árvore de pastas na criação de um novo módulo.</figcaption>
         </figure>
-        <p>Se o módulo utilize recursos externos como imagens, SVG's, fontes, etc, crie uma pasta chamada <code>assets</code> dentro da pasta do módulo para guardar esses arquivos.</p>
+        <p>Caso o módulo utilize recursos externos como imagens, SVGs, fontes etc, crie uma pasta chamada <code>assets</code> dentro da pasta do módulo para guardar esses arquivos.</p>
       </section>
       <section id="markup">
-        <h1>Marcação HTML</h1>
+        <h2>Marcação HTML</h2>
         <p>O arquivo <code>index.html</code> do módulo deve ter o seguinte template:</p>
         <pre>
           <code class="code html">
@@ -117,9 +117,9 @@
 &lt;/head&gt;
 &lt;body&gt;
   &lt;header id=&quot;header&quot;&gt;
-    &lt;h1&gt;Nome do M&#243;dulo v0.1&lt;/h1&gt;
+    &lt;h2&gt;Nome do M&#243;dulo v0.1&lt;/h2&gt;
     &lt;nav&gt;
-      &lt;h1&gt;&#205;ndice&lt;/h1&gt;
+      &lt;h2&gt;&#205;ndice&lt;/h2&gt;
       &lt;li&gt;&lt;a href=&quot;#modulo&quot;&gt;M&#243;dulo&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#descricao&quot;&gt;Descri&#231;&#227;o&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#uso&quot;&gt;Uso&lt;/a&gt;&lt;/li&gt;
@@ -129,32 +129,32 @@
   &lt;/header&gt;
   &lt;main class=&quot;global main&quot;&gt;
     &lt;section id=&quot;modulo&quot;&gt;
-      &lt;h1&gt;M&#243;dulo&lt;/h1&gt;
+      &lt;h2&gt;M&#243;dulo&lt;/h2&gt;
       &lt;!-- Marca&#231;&#227;o HTML do m&#243;dulo --&gt;
     &lt;/section&gt;
     &lt;section id=&quot;descricao&quot;&gt;
-      &lt;h1&gt;Descri&#231;&#227;o&lt;/h1&gt;
+      &lt;h2&gt;Descri&#231;&#227;o&lt;/h2&gt;
       &lt;p&gt;Descri&#231;&#227;o do m&#243;dulo.&lt;/p&gt;
     &lt;/section&gt;
     &lt;section id=&quot;uso&quot;&gt;
-      &lt;h1&gt;Uso&lt;/h1&gt;
+      &lt;h2&gt;Uso&lt;/h2&gt;
       &lt;p&gt;Instru&#231;&#245;es para o uso do m&#243;dulo, com exemplo de uso do c&#243;digo:&lt;/p&gt;
       &lt;pre&gt;
         &lt;code class=&quot;code html&quot;&gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;caminho/para/WebModules.css&amp;quot;&amp;gt;
-  &amp;lt;/head&amp;gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;caminho/para/WebModules.css&quot;&gt;
+  &lt;/head&gt;
         &lt;/code&gt;
       &lt;/pre&gt;
       ...
     &lt;/section&gt;
     &lt;section id=&quot;comportamento&quot;&gt;
-      &lt;h1&gt;Comportamento&lt;/h1&gt;
+      &lt;h2&gt;Comportamento&lt;/h2&gt;
       &lt;p&gt;Descri&#231;&#227;o do comportamento do m&#243;dulo, ou seja, como ele reage a intera&#231;&#227;o com o usu&#225;rio, o contexto em que ele est&#225; inserido e como ele pode ser configurado, se necess&#225;rio utilizando exemplos em c&#243;digo.&lt;/p&gt;
     &lt;/section&gt;
     &lt;section id=&quot;log&quot;&gt;
-      &lt;h1&gt;Log de vers&#245;es&lt;/h1&gt;
-      &lt;ul class=&quot;no-list&quot;&gt;
+      &lt;h2&gt;Log de vers&#245;es&lt;/h2&gt;
+      &lt;ul&gt;
         &lt;li&gt;
           &lt;h2&gt;0.1&lt;/h2&gt;
           &lt;ul class=&quot;no-list&quot;&gt;
@@ -165,22 +165,22 @@
     &lt;/section&gt;
   &lt;/main&gt;
   &lt;footer class=&quot;global footer&quot;&gt;
-    &lt;h1&gt;&lt;a href=&quot;http://epicentrotec.github.io/webmodules.github.io/&quot;&gt;WebModules&lt;/a&gt;&lt;/h1&gt;
+    &lt;h2&gt;&lt;a href=&quot;http://epicentrotec.github.io/webmodules.github.io/&quot;&gt;WebModules&lt;/a&gt;&lt;/h2&gt;
   &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
           </code>
         </pre>
-        <p>A marcação HTML do módulo deve estar dentro da <code>&lt;section id=&quot;modulo&quot;&gt;</code>, como indicado na linha 25. Caso seja necessário utilizar um exemplo de código, coloque ele dentro de uma tag <code>&lt;code&gt;</code> com um valor de classe <code>code</code> mais outro que indique a linguagem do código, os valores suportados são <code>html</code>, <code>css</code>, <code>javascript</code>, <code>scss</code>, <code>http</code>, <code>makefile</code>, <code>markdown</code>, <code>sql</code>, <code>xml</code>, <code>json</code>, <code>bash</code> e <code>php</code>. A tag code por sua vez deve estar dentro de uma tag <code>&lt;pre&gt;</code> como indicado no código entre as linhas 34 e 40. Caso o código seja HTML, CSS, PHP ou JavaScript e seus derivados, você deve escapar seus caracteres especiais antes de inseri-los na tag <code>&lt;code&gt;</code>, para fazer isso recomendamos o site <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">opinionatedgeek.com</a>.</p>
+        <p>A marcação HTML do módulo deve estar dentro da <code>&lt;section id=&quot;modulo&quot;&gt;</code>, como indicado na linha 25. Caso seja necessário utilizar um exemplo de código, coloque-o dentro de uma <em>tag </em><code>&lt;code&gt;</code> com um valor de classe <code>code</code> mais outro que indique a linguagem do código, os valores suportados são <code>html</code>, <code>css</code>, <code>javascript</code>, <code>scss</code>, <code>http</code>, <code>makefile</code>, <code>markdown</code>, <code>sql</code>, <code>xml</code>, <code>json</code>, <code>bash</code> e <code>php</code>. A <em>tag </em><code>&lt;code&gt;</code> por sua vez deve estar dentro de uma <em>tag </em><code>&lt;pre&gt;</code> como indicado no código entre as linhas 34 e 40. Caso o código seja HTML, CSS, PHP ou JavaScript e seus derivados, você deve escapar seus caracteres especiais antes de inseri-los na <em>tag </em><code>&lt;code&gt;</code>. Para fazer isso recomendamos o <em>site </em><a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx" target="_blank">opinionatedgeek.com</a>.</p>
         <p>O conteúdo das <code>&lt;section&gt;</code> deve ser preenchido de acordo com o módulo.</p>
         <h2>Versionamento</h2>
-        <p>Os módulos devem utilizar o modelo de versão <code>versão.subversão - XX/XX/XXXX (data de lançamento)</code>. A versão representa uma versão funcional com novas funcionalidades e mudanças estruturais em relação a uma versão anterior do módulo e a subversão representa ajustes e correções dentro de uma versão, sem nenhuma mudança significativa.</p>
-        <p>O Log de versões mostra as mudanças da nova versão em relação a versão anterior. A primeira (versão 1.0) versão deve conter apenas o lançamento do módulo.</p>
+        <p>Os módulos devem utilizar o modelo de versão <code>&lt;versão&gt;.&lt;subversão&gt; - &lt;XX/XX/XXXX&gt;</code>, sendo a última informação a data de lançamento. A versão representa uma versão funcional com novas funcionalidades e mudanças estruturais em relação a uma versão anterior do módulo e a subversão representa ajustes e correções dentro de uma versão, sem nenhuma mudança significativa.</p>
+        <p>O <em>log </em>de versões mostra as mudanças da nova versão em relação à versão anterior. A primeira versão (versão 1.0) deve conter apenas o lançamento do módulo.</p>
       </section>
       <section id="style">
-        <h1>Estilo CSS</h1>
+        <h2>Estilo CSS</h2>
         <p>O estilo CSS referente ao módulo deve ser escrito no arquivo <code>style.css</code>.<br>
-        Os estilos devem começar com a classe do módulo, que deve ser composta pela combinação <code>wm-(nomeDoModulo)</code>. Exemplo do módulo <a href="../modules/jumbotron">Jumbotron</a>:</p>
+        Os estilos devem começar com a classe do módulo, que deve ser composta pela combinação <code>wm-&lt;nomeDoModulo&gt;</code>. Exemplo do módulo <a href="../modules/jumbotron" target="_blank">Jumbotron</a>:</p>
         <pre>
           <code class="code css">
 .wm-jumbotron {
@@ -196,10 +196,10 @@
 }
           </code>
         </pre>
-        <p>Além de seu estilo exclusivo, os módulos herdam alguns estilos globais, contidos no arquivo <code><a href="../modules/global/global.css">global.css</a></code>. Verifique este arquivo antes de criar os estilos do módulo.</p>
+        <p>Além de seu estilo exclusivo, os módulos herdam alguns estilos globais, contidos no arquivo <code><a href="../modules/global/global.css" target="_blank">global.css</a></code>. Verifique este arquivo antes de criar os estilos do módulo.</p>
       </section>
       <section id="scripts">
-        <h1>JavaScript</h1>
+        <h2>JavaScript</h2>
         <p>Caso seu módulo utilize scripts JavaScript, escreva-os no arquivo <code>script.js</code> com o seguinte template:</p>
         <pre>
           <code class="code javascript">
@@ -211,7 +211,7 @@ window.onload = function() {
       </section>
     </main>
     <footer class="global footer">
-      <h1><a href="../">WebModules</a></h1>
+      <h2><a href="../">WebModules</a></h2>
     </footer>
   </body>
 </html>
